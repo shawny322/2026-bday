@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>April's Birthday in Curacao</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #ff6f61, #ffb347);
+      color: white;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5em;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2em;
+    }
+    section {
+      padding: 20px;
+      margin: 15px auto;
+      max-width: 900px;
+      background-color: rgba(255,255,255,0.9);
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #ff6f61;
+      font-family: 'Pacifico', cursive;
+      margin-bottom: 10px;
+    }
+    .image-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+      justify-content: center;
+    }
+    .image-container img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .countdown {
+      font-size: 2em;
+      font-weight: bold;
+      color: #ff6f61;
+      text-align: center;
+      margin-top: 10px;
+    }
+    ul {
+      line-height: 1.6;
+    }
+    footer {
+      background-color: #ff6f61;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+      font-size: 1.1em;
+      box-shadow: 0 -2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>April's Birthday in Curacao</h1>
+  <p>Get ready for an unforgettable celebration!</p>
+</header>
+
+<section>
+  <h2>Countdown to Departure</h2>
+  <p class="countdown" id="countdown"></p>
+</section>
+
+<section>
+  <h2>March 26 (Afternoon) – Welcome</h2>
+  <div class="image-container">
+    <img src="images/welcome.jpg" alt="Welcome Image Placeholder">
+  </div>
+</section>
+
+<section>
+  <h2>March 26 (Night) – Night Out with Fireworks at Cascada</h2>
+  <div class="image-container">
+    <img src="images/cascada_fireworks.jpg" alt="Cascada Fireworks Placeholder">
+  </div>
+</section>
+
+<section>
+  <h2>March 27 – ATV Island Tour or Jet Ski Adventure</h2>
+  <div class="image-container">
+    <img src="images/atv_tour.jpg" alt="ATV Tour Placeholder">
+    <img src="images/jet_ski.jpg" alt="Jet Ski Placeholder">
+  </div>
+</section>
+
+<section>
+  <h2>March 27 (Night) – Club Party</h2>
+  <div class="image-container">
+    <img src="images/club_party.jpg" alt="Club Party Placeholder">
+  </div>
+</section>
+
+<section>
+  <h2>March 28 – Brunch at Mood Beach & Beach Hopping</h2>
+  <div class="image-container">
+    <img src="images/mood_beach_brunch.jpg" alt="Mood Beach Brunch Placeholder">
+    <img src="images/beach_hopping.jpg" alt="Beach Hopping Placeholder">
+  </div>
+</section>
+
+<section>
+  <h2>March 29 – Boat Party</h2>
+  <div class="image-container">
+    <img src="images/boat_party.jpg" alt="Boat Party Placeholder">
+  </div>
+</section>
+
+<section>
+  <h2>March 29 – Farewell Breakfast</h2>
+  <div class="image-container">
+    <img src="images/farewell_breakfast.jpg" alt="Farewell Breakfast Placeholder">
+  </div>
+</section>
+
+<section>
+  <h2>Packing Tips</h2>
+  <ul>
+    <li>Lightweight summer clothes</li>
+    <li>Swimwear & beach towel</li>
+    <li>Sunscreen & sunglasses</li>
+    <li>Party outfits for nightlife</li>
+    <li>Comfortable shoes for adventures</li>
+    <li>Men: casual shorts, collared shirts, swim trunks, evening outfits</li>
+  </ul>
+</section>
+
+<footer>
+  <p>April's Birthday in Curacao 🎉</p>
+</footer>
+
+<script>
+// Countdown Timer
+const countdownElement = document.getElementById('countdown');
+const departureDate = new Date('March 26, 2026 12:00:00').getTime();
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = departureDate - now;
+  
+  if (distance < 0) {
+    countdownElement.innerHTML = "We're in Curacao!";
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
+
+</body>
+</html>
